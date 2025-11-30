@@ -3,154 +3,219 @@
 <head>
   <meta charset="UTF-8" />
   <title>Mallesh Miryala | Salesforce Solution Architect & Lead</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* MULTICOLOR BACKGROUND */
+    /* GLOBAL BACKGROUND – MULTICOLOR GRADIENT */
     body {
       margin: 0;
-      font-family: system-ui, sans-serif;
-      line-height: 1.6;
-      background: linear-gradient(135deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #6366f1);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ff416c, #ff9a00, #22c55e, #0ea5e9, #6366f1);
       background-size: 260% 260%;
-      animation: gradientMove 12s ease infinite;
-      color: #0f172a;
+      animation: bgShift 16s ease infinite;
+      color: #f9fafb;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+    @keyframes bgShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* CARD CONTENT */
-    .page {
-      max-width: 960px;
+    /* PAGE SHELL */
+    .shell {
+      max-width: 1080px;
       margin: 0 auto;
       min-height: 100vh;
-      padding: 2.5rem 1.5rem 3rem;
+      padding: 1.5rem 1.75rem 3rem;
+    }
+
+    /* TOP NAV – REAL WEBSITE FEEL */
+    .site-header {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 10% 10%, #f97316, #ef4444, #3b82f6);
+      display: flex;
+      align-items: center;
       justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #f9fafb;
     }
 
-    .card {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.94);
-      border-radius: 1.25rem;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
-      padding: 2rem 2.25rem 2.5rem;
-      position: relative;
-      backdrop-filter: blur(10px);
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #e5e7eb;
     }
 
-    /* TABS */
-    .top-tabs {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
+    nav {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.85rem;
     }
 
-    .top-tabs a {
+    nav a {
       text-decoration: none;
-      padding: 0.5rem 1rem;
-      background: #ffffff;
-      color: #0f172a;
-      border-radius: 25px;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700; /* thick letters */
       font-size: 0.9rem;
-      border: 1px solid #d1d5db;
+      color: #f9fafb;
+      border: 2px solid rgba(248, 250, 252, 0.8);
+      backdrop-filter: blur(5px);
+      transition: 0.22s ease;
     }
 
-    .top-tabs a:hover {
-      background: #f1f5f9;
+    nav a.uc-tab {
+      background: #fb7185;   /* pink/red */
     }
 
-    /* HERO */
+    nav a.articles-tab {
+      background: #2563eb;   /* blue */
+    }
+
+    nav a:hover {
+      transform: scale(1.06) translateY(-1px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.35);
+    }
+
+    /* HERO SECTION – LOGO LEFT, TEXT RIGHT */
     .hero {
       display: flex;
-      gap: 2rem;
       align-items: center;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 1.5rem;
-      margin-bottom: 1.5rem;
+      gap: 3rem;
+      margin-top: 0.75rem;
+      padding: 2.5rem 2.25rem;
+      border-radius: 1.5rem;
+      background: linear-gradient(135deg, rgba(15,23,42,0.88), rgba(15,23,42,0.7));
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-logo {
+      flex-shrink: 0;
     }
 
     .hero-logo img {
       display: block;
-      max-width: 220px;
+      width: 260px;   /* BIG LOGO */
       height: auto;
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.6));
     }
 
+    .hero-text {
+      max-width: 640px;
+    }
+
+    /* NAME – COLOR 1 */
     .hero-text h1 {
-      margin: 0 0 0.25rem;
-      font-size: 2.2rem;
-      font-weight: 700;
-    }
-
-    .hero-text p {
       margin: 0;
-      font-size: 1.05rem;
-      color: #475569;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #e5f0ff; /* soft icy blue */
     }
 
-    .about-text p {
+    /* TITLE – COLOR 2 */
+    .hero-text h2 {
+      margin: 0.35rem 0 1.75rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #facc15; /* amber/yellow contrast */
+    }
+
+    /* PARAGRAPHS – COLOR 3 */
+    .hero-text p {
       margin: 0 0 1rem;
-      color: #111827;
-      font-size: 1rem;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: #e5e7eb;
     }
 
-    @media (max-width: 720px) {
-      .hero {
+    @media (max-width: 860px) {
+      .shell {
+        padding: 1.25rem 1.1rem 2.5rem;
+      }
+
+      .site-header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      nav {
+        align-self: flex-start;
+      }
+
+      .hero {
+        flex-direction: column;
+        padding: 1.9rem 1.6rem 2.1rem;
       }
 
       .hero-logo img {
-        max-width: 180px;
+        width: 210px;
       }
 
-      .top-tabs {
-        position: static;
-        margin-bottom: 1rem;
+      .hero-text h1 {
+        font-size: 2.1rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <div class="card">
+  <div class="shell">
 
-      <!-- TABS -->
-      <div class="top-tabs">
-        <a href="uc.html">UC Ready Experience</a>
-        <a href="articles.html">Articles</a>
+    <!-- TOP NAV BAR -->
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">MM</div>
+        <div class="brand-name">Mallesh Miryala</div>
+      </div>
+      <nav>
+        <a class="uc-tab" href="uc.html">UC Ready Experience</a>
+        <a class="articles-tab" href="articles.html">Articles</a>
+      </nav>
+    </header>
+
+    <!-- HERO: LOGO LEFT, TEXT RIGHT -->
+    <section class="hero">
+      <div class="hero-logo">
+        <!-- Change MM.jpg to your real logo filename -->
+        <img src="MM.jpg" alt="MM logo" />
       </div>
 
-      <!-- HERO -->
-      <div class="hero">
-        <div class="hero-logo">
-          <img src="MM.jpg" alt="MM logo" />
-        </div>
+      <div class="hero-text">
+        <h1>Mallesh Miryala</h1>
+        <h2>Salesforce Solution Architect &amp; Technical Lead</h2>
 
-        <div class="hero-text">
-          <h1>Mallesh Miryala</h1>
-          <p>Salesforce Solution Architect / Technical Lead</p>
-        </div>
-      </div>
-
-      <!-- MAIN TEXT -->
-      <div class="about-text">
         <p>
           A Salesforce Solution Architect and Technical Lead with over a decade of experience in software development and on the Salesforce platform, owning the full delivery lifecycle—from requirements and solution design through configuration, custom development, testing, deployment, and long-term support. I work across multiple Salesforce clouds (Sales, Service, Experience, Marketing, CPQ, and analytics), combining low-code automation with Apex, Lightning, integrations, and Agentforce AI to build scalable, secure, and human-centered solutions.
         </p>
+
         <p>
           I have a strong focus on Agentforce AI–driven experiences—using predictive insights, recommendations, and intelligent automation to simplify work for users and improve decision-making. I’m comfortable leading cross-functional teams, partnering with business stakeholders, BAs, and engineers to turn complex requirements into clear architectures, reliable implementations, and well-documented platforms that continue to evolve with the organization.
         </p>
       </div>
+    </section>
 
-    </div>
-  </main>
+  </div>
 </body>
 </html>
+
