@@ -4,172 +4,114 @@
   <meta charset="UTF-8" />
   <title>Mallesh Miryala | Salesforce Solution Architect & Lead</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <style>
+    /* Page background & layout */
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
-      background: #f5f5f5;
+      background: linear-gradient(130deg, #ef4444, #f59e0b, #3b82f6);
+      background-attachment: fixed;
       color: #111827;
     }
     .page {
       max-width: 900px;
       margin: 0 auto;
-      padding: 1.5rem;
-      background: white;
+      padding: 1.75rem 1.5rem 3rem;
+      background: #ffffff;
       min-height: 100vh;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.25);
     }
 
-    /* ---------- HEADER LAYOUT ---------- */
+    /* Header with MM logo on the left */
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
       border-bottom: 1px solid #e5e7eb;
       padding-bottom: 1rem;
-      margin-bottom: 2rem;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    /* ---------- MULTI-COLOR MM LOGO ---------- */
     .mm-logo {
-      width: 55px;
-      height: 55px;
-      position: relative;
+      flex-shrink: 0;
     }
 
-    .mm-logo div {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-style: solid;
+    .mm-logo svg {
+      display: block;
+      width: 90px;   /* make logo big */
+      height: 70px;
     }
 
-    /* Left M leg */
-    .m-left {
-      border-width: 55px 10px 0 10px;
-      border-color: #e63946 transparent transparent transparent; /* red */
-      transform: rotate(14deg);
-      left: -5px;
-      top: 5px;
-    }
-
-    /* Middle V */
-    .m-mid {
-      border-width: 55px 12px 0 12px;
-      border-color: #1d4ed8 transparent transparent transparent; /* blue */
-      top: -5px;
-      left: 16px;
-    }
-
-    /* Right M leg */
-    .m-right {
-      border-width: 55px 10px 0 10px;
-      border-color: #fbbf24 transparent transparent transparent; /* yellow */
-      transform: rotate(-14deg);
-      left: 32px;
-      top: 5px;
-    }
-
-    /* ---------- NAME BLOCK ---------- */
     .name-block h1 {
-      margin: 0;
-      font-size: 1.8rem;
+      margin: 0 0 0.25rem;
+      font-size: 2rem;
       font-weight: 700;
     }
-
     .name-block p {
       margin: 0;
       font-size: 1rem;
       color: #4b5563;
     }
 
-    /* ---------- NAVIGATION ---------- */
-    nav {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      font-size: 0.92rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #374151;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-    }
-
-    nav a:hover {
-      border-color: #d1d5db;
-      background: #f3f4f6;
-    }
-
-    /* ---------- SECTIONS ---------- */
+    /* Sections */
     .section {
       margin-top: 2rem;
     }
     .section h2 {
-      margin-bottom: 0.5rem;
-      font-size: 1.25rem;
+      margin: 0 0 0.6rem;
+      font-size: 1.35rem;
     }
     .section h3 {
-      margin-top: 1rem;
-      margin-bottom: 0.25rem;
+      margin: 1rem 0 0.3rem;
       font-size: 1.05rem;
     }
     .section ul {
-      margin-left: 1.2rem;
+      margin: 0.2rem 0 0.6rem 1.25rem;
+      padding: 0;
     }
-
-    footer {
-      margin-top: 3rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e5e7eb;
-      color: #6b7280;
-      font-size: 0.85rem;
+    .section li + li {
+      margin-top: 0.2rem;
     }
 
     @media (max-width: 640px) {
+      .page {
+        padding: 1.25rem 1rem 2.5rem;
+        box-shadow: none;
+        border-radius: 0;
+      }
       header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 1rem;
       }
     }
   </style>
 </head>
-
 <body>
   <main class="page">
 
-    <!-- HEADER -->
+    <!-- HEADER: MM logo + name/title -->
     <header>
-      <div class="header-left">
-        <div class="mm-logo">
-          <div class="m-left"></div>
-          <div class="m-mid"></div>
-          <div class="m-right"></div>
-        </div>
-
-        <div class="name-block">
-          <h1>Mallesh Miryala</h1>
-          <p>Salesforce Solution Architect / Technical Lead</p>
-        </div>
+      <div class="mm-logo">
+        <!-- Dual-color MM logo (inline SVG, inspired by your image) -->
+        <svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="mmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ef4444" />   <!-- red -->
+              <stop offset="50%" stop-color="#f59e0b" />  <!-- yellow/orange -->
+              <stop offset="100%" stop-color="#3b82f6" /><!-- blue -->
+            </linearGradient>
+          </defs>
+          <!-- stylized double M -->
+          <path d="M10 80 L30 10 L60 55 L90 10 L110 80 L90 80 L60 35 L30 80 Z"
+                fill="url(#mmGradient)" />
+        </svg>
       </div>
 
-      <nav>
-        <a href="#about">About</a>
-        <a href="#uc-experience">UC Experience</a>
-        <a href="#articles">Articles</a>
-        <a href="#sf-knowledge">Salesforce Knowledge</a>
-      </nav>
+      <div class="name-block">
+        <h1>Mallesh Miryala</h1>
+        <p>Salesforce Solution Architect / Technical Lead</p>
+      </div>
     </header>
 
     <!-- ABOUT -->
@@ -183,54 +125,51 @@
       </p>
     </section>
 
-    <!-- THE REST OF YOUR CONTENT (UC EXPERIENCE, ARTICLES, KNOWLEDGE, CONTACT) -->
-    <!-- SAME AS PREVIOUS ANSWER – REUSED BELOW FOR YOU -->
+    <!-- WHAT I BRING -->
+    <section class="section" id="what-i-bring">
+      <h2>What I Bring as a Salesforce Solution Architect</h2>
 
-    <section class="section" id="uc-experience">
-      <h2>UC Experience</h2>
-      <p>
-        At the University of California, I work as a Salesforce Solution Architect / Lead, helping teams use Salesforce and related platforms to support planning, operations, and resilience across a large, distributed environment.
-      </p>
-      <p>My work touches:</p>
+      <h3>End-to-End Architecture</h3>
       <ul>
-        <li>Continuity & ITDR workflows and data modeling</li>
-        <li>Campus + systemwide operational alignment</li>
-        <li>Governed, well-documented, scalable Salesforce changes</li>
+        <li>Design of multi-cloud solutions across Sales, Service, Experience, Marketing, and CPQ</li>
+        <li>Definition of data models, integration patterns, and reference architectures</li>
+      </ul>
+
+      <h3>Low-Code First, Code When Needed</h3>
+      <ul>
+        <li>Flow-led automation and guardrails for when to use Apex/LWC</li>
+        <li>Reduction of technical debt through reusable components and patterns</li>
+      </ul>
+
+      <h3>AI, Analytics &amp; Intelligence</h3>
+      <ul>
+        <li>Use of Einstein/Agentforce to surface insights and drive smarter actions</li>
+        <li>Dashboards and analytics that track readiness, performance, and adoption</li>
+      </ul>
+
+      <h3>Integrations &amp; AppExchange</h3>
+      <ul>
+        <li>Connecting Salesforce with enterprise systems and external apps</li>
+        <li>Selecting and managing AppExchange solutions with governance and support in mind</li>
+      </ul>
+
+      <h3>Security, Org Strategy &amp; Governance</h3>
+      <ul>
+        <li>Role/permission designs aligned to real-world access needs</li>
+        <li>Standards for environments, branching, releases, and change control</li>
+      </ul>
+
+      <h3>Adoption &amp; Enablement</h3>
+      <ul>
+        <li>Clear diagrams, documentation, and training that help teams understand, trust, and use the platform</li>
+        <li>Feedback loops to continuously refine features based on real usage</li>
       </ul>
     </section>
 
-    <section class="section" id="articles">
-      <h2>Articles</h2>
-      <p>
-        This section will feature articles I write about architecture, AI-assisted automation, and Salesforce delivery patterns.
-      </p>
-    </section>
-
-    <section class="section" id="sf-knowledge">
-      <h2>Salesforce Knowledge</h2>
-      <p>
-        A place to capture and share Salesforce concepts, patterns, and solutions from hands-on experience.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:miryalaca@gmail.com">miryalaca@gmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mmiryala415/" target="_blank">linkedin.com/in/mmiryala415</a></p>
-      <p><strong>Location:</strong> San Ramon, California</p>
-    </section>
-
-    <footer>
-      &copy; <span id="year"></span> Mallesh Miryala
-    </footer>
-
   </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+
 
 
 
