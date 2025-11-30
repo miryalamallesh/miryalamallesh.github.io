@@ -6,46 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* SALESFORCE-LIKE BLUE GRADIENT BACKGROUND */
+    /* SALESFORCE-STYLE BLUE BACKGROUND */
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #00a1e0 0%, #0176d3 35%, #0b3173 80%);
-      background-size: 140% 140%;
+      background: radial-gradient(circle at top left, #00a1e0 0%, #0176d3 35%, #0b3173 85%);
+      background-size: 160% 160%;
       animation: bgShift 18s ease-in-out infinite;
       color: #f9fafb;
+      min-height: 100vh;
     }
 
     @keyframes bgShift {
       0%   { background-position: 0% 0%; }
-      50%  { background-position: 100% 60%; }
+      50%  { background-position: 100% 50%; }
       100% { background-position: 0% 0%; }
     }
 
-    .shell {
-      max-width: 1150px;
-      margin: 0 auto;
-      min-height: 100vh;
-      padding: 1.5rem 1.75rem 3rem;
-    }
-
-    /* TOP NAV: ONLY TABS, TOP-RIGHT, BOLD */
-    .site-header {
-      display: flex;
-      justify-content: flex-end;  /* everything to the right */
-      padding: 0.75rem 0;
-    }
-
-    nav {
+    /* TOP-RIGHT TABS ONLY */
+    .top-nav {
+      position: fixed;
+      top: 16px;
+      right: 24px;
       display: flex;
       gap: 0.9rem;
+      z-index: 50;
     }
 
-    nav a {
+    .top-nav a {
       text-decoration: none;
-      padding: 0.5rem 1.4rem;
+      padding: 0.55rem 1.5rem;
       border-radius: 999px;
-      font-weight: 800;           /* bold letters */
+      font-weight: 800;             /* bold letters */
       font-size: 0.95rem;
       color: #f9fafb;
       border: 2px solid rgba(248, 250, 252, 0.95);
@@ -54,53 +46,46 @@
       box-shadow: 0 0 0 rgba(15,23,42,0);
     }
 
-    nav a.uc-tab {
-      background: #0b5cab;        /* Salesforce dark blue */
+    .top-nav a.uc-tab {
+      background: #0b5cab;          /* dark Salesforce blue */
     }
 
-    nav a.articles-tab {
-      background: #00a1e0;        /* Salesforce cyan */
+    .top-nav a.articles-tab {
+      background: #00a1e0;          /* Salesforce cyan */
     }
 
-    nav a:hover {
+    .top-nav a:hover {
       transform: scale(1.07) translateY(-1px);
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.55);
     }
 
-    /* HERO – LOGO LEFT, TEXT RIGHT */
+    /* HERO: LOGO LEFT, TEXT RIGHT, NO CARD */
     .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 2.5rem 3rem;    /* space under fixed nav */
       display: flex;
       align-items: center;
       gap: 3rem;
-      margin-top: 2rem;
-      padding: 2.5rem 2rem;
-      border-radius: 1.5rem;
-      background: rgba(6, 14, 40, 0.78);  /* dark glass panel */
-      box-shadow: 0 20px 50px rgba(3, 7, 18, 0.8);
-      backdrop-filter: blur(18px);
-    }
-
-    .hero-logo {
-      flex-shrink: 0;
     }
 
     .hero-logo img {
       display: block;
-      width: 260px;               /* big logo */
+      width: 260px;
       height: auto;
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.7));
+      filter: drop-shadow(0 12px 32px rgba(0,0,0,0.6));
     }
 
     .hero-text {
-      max-width: 680px;
+      max-width: 700px;
     }
 
-    /* NAME – single color */
+    /* NAME – one color */
     .hero-text h1 {
       margin: 0;
       font-size: 2.7rem;
       font-weight: 900;
-      color: #e5f0ff;             /* light ice blue */
+      color: #e5f0ff;               /* icy blue */
       letter-spacing: 0.02em;
     }
 
@@ -109,10 +94,10 @@
       margin: 0.4rem 0 1.9rem;
       font-size: 1.35rem;
       font-weight: 600;
-      color: #9fe0ff;             /* soft Salesforce cyan */
+      color: #9fe0ff;               /* softer cyan */
     }
 
-    /* BODY TEXT – softer white */
+    /* BODY – softer white */
     .hero-text p {
       margin: 0 0 1rem;
       font-size: 1.05rem;
@@ -121,17 +106,10 @@
     }
 
     @media (max-width: 860px) {
-      .shell {
-        padding: 1.25rem 1.1rem 2.5rem;
-      }
-
-      .site-header {
-        justify-content: center;
-      }
-
       .hero {
         flex-direction: column;
-        padding: 1.9rem 1.4rem 2.1rem;
+        padding: 6rem 1.4rem 2.5rem;
+        text-align: center;
       }
 
       .hero-logo img {
@@ -141,46 +119,45 @@
       .hero-text h1 {
         font-size: 2.2rem;
       }
+
+      .top-nav {
+        justify-content: center;
+        right: 0;
+        left: 0;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="shell">
-
-    <!-- TOP NAV: TABS ONLY, RIGHT -->
-    <header class="site-header">
-      <nav>
-        <a class="uc-tab" href="uc.html">UC Ready Experience</a>
-        <a class="articles-tab" href="articles.html">Articles</a>
-      </nav>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="hero-logo">
-        <!-- change MM.jpg to your actual logo filename if needed -->
-        <img src="MM.jpg" alt="MM logo" />
-      </div>
-
-      <div class="hero-text">
-        <h1>Mallesh Miryala</h1>
-        <h2>Salesforce Solution Architect &amp; Technical Lead</h2>
-
-        <p>
-          A Salesforce Solution Architect and Technical Lead with over a decade of experience in software development and on the Salesforce platform, owning the full delivery lifecycle—from requirements and solution design through configuration, custom development, testing, deployment, and long-term support. I work across multiple Salesforce clouds (Sales, Service, Experience, Marketing, CPQ, and analytics), combining low-code automation with Apex, Lightning, integrations, and Agentforce AI to build scalable, secure, and human-centered solutions.
-        </p>
-
-        <p>
-          I have a strong focus on Agentforce AI–driven experiences—using predictive insights, recommendations, and intelligent automation to simplify work for users and improve decision-making. I’m comfortable leading cross-functional teams, partnering with business stakeholders, BAs, and engineers to turn complex requirements into clear architectures, reliable implementations, and well-documented platforms that continue to evolve with the organization.
-        </p>
-      </div>
-    </section>
-
+  <!-- TOP-RIGHT BOLD TABS -->
+  <div class="top-nav">
+    <a class="uc-tab" href="uc.html">UC Ready Experience</a>
+    <a class="articles-tab" href="articles.html">Articles</a>
   </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-logo">
+      <!-- change MM.jpg to your actual logo file name -->
+      <img src="MM.jpg" alt="MM logo" />
+    </div>
+
+    <div class="hero-text">
+      <h1>Mallesh Miryala</h1>
+      <h2>Salesforce Solution Architect &amp; Technical Lead</h2>
+
+      <p>
+        A Salesforce Solution Architect and Technical Lead with over a decade of experience in software development and on the Salesforce platform, owning the full delivery lifecycle—from requirements and solution design through configuration, custom development, testing, deployment, and long-term support. I work across multiple Salesforce clouds (Sales, Service, Experience, Marketing, CPQ, and analytics), combining low-code automation with Apex, Lightning, integrations, and Agentforce AI to build scalable, secure, and human-centered solutions.
+      </p>
+
+      <p>
+        I have a strong focus on Agentforce AI–driven experiences—using predictive insights, recommendations, and intelligent automation to simplify work for users and improve decision-making. I’m comfortable leading cross-functional teams, partnering with business stakeholders, BAs, and engineers to turn complex requirements into clear architectures, reliable implementations, and well-documented platforms that continue to evolve with the organization.
+      </p>
+    </div>
+  </section>
 </body>
 </html>
 
-</html>
 
 
