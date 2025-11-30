@@ -3,104 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <title>Mallesh Miryala | Salesforce Solution Architect & Lead</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Minimal built-in styling, no external CSS file -->
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #f5f5f5;
+      color: #111827;
+    }
+    .page {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+      background: #ffffff;
+      min-height: 100vh;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.75rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .mm-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 180deg,
+        #6366f1,
+        #ec4899,
+        #f59e0b,
+        #22c55e,
+        #0ea5e9,
+        #6366f1
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: white;
+    }
+    .name-block h1 {
+      margin: 0;
+      font-size: 1.75rem;
+    }
+    .name-block p {
+      margin: 0.1rem 0 0;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    nav a:hover {
+      border-color: #d1d5db;
+      background: #f3f4f6;
+    }
+    .section {
+      margin-top: 2rem;
+    }
+    .section h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.2rem;
+    }
+    .section h3 {
+      margin: 1rem 0 0.3rem;
+      font-size: 1.02rem;
+    }
+    .section p {
+      margin: 0 0 0.7rem;
+    }
+    .section ul {
+      margin: 0.25rem 0 0.5rem 1.2rem;
+      padding: 0;
+    }
+    .section li + li {
+      margin-top: 0.2rem;
+    }
+    a {
+      color: #2563eb;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.85rem;
+      color: #6b7280;
+      text-align: left;
+    }
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        padding-top: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <main class="page">
 
-  <h1>Mallesh Miryala</h1>
-  <p><strong>Salesforce Solution Architect / Technical Lead</strong></p>
+    <!-- HEADER with MM icon + tabs -->
+    <header>
+      <div class="brand">
+        <div class="mm-icon">MM</div>
+        <div class="name-block">
+          <h1>Mallesh Miryala</h1>
+          <p>Salesforce Solution Architect / Technical Lead</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#uc-experience">UC Experience</a>
+        <a href="#articles">Articles</a>
+        <a href="#sf-knowledge">Salesforce Knowledge</a>
+      </nav>
+    </header>
 
-  <hr />
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2>About</h2>
+      <p>
+        A Salesforce Solution Architect and Technical Lead with over a decade of experience in software development and on the Salesforce platform, owning the full delivery lifecycle—from requirements and solution design through configuration, custom development, testing, deployment, and long-term support. I work across multiple Salesforce clouds (Sales, Service, Experience, Marketing, CPQ, and analytics), combining low-code automation with Apex, Lightning, integrations, and Agentforce AI to build scalable, secure, and human-centered solutions.
+      </p>
+      <p>
+        I have a strong focus on Agentforce AI–driven experiences—using predictive insights, recommendations, and intelligent automation to simplify work for users and improve decision-making. I’m comfortable leading cross-functional teams, partnering with business stakeholders, BAs, and engineers to turn complex requirements into clear architectures, reliable implementations, and well-documented platforms that continue to evolve with the organization.
+      </p>
+    </section>
 
-  <h2>About</h2>
-  <p>
-    A Salesforce Solution Architect and Technical Lead with over a decade of experience in software development and on the Salesforce platform, owning the full delivery lifecycle—from requirements and solution design through configuration, custom development, testing, deployment, and long-term support. I work across multiple Salesforce clouds (Sales, Service, Experience, Marketing, CPQ, and analytics), combining low-code automation with Apex, Lightning, integrations, and Agentforce AI to build scalable, secure, and human-centered solutions.
-  </p>
-  <p>
-    I have a strong focus on Agentforce AI–driven experiences—using predictive insights, recommendations, and intelligent automation to simplify work for users and improve decision-making. I’m comfortable leading cross-functional teams, partnering with business stakeholders, BAs, and engineers to turn complex requirements into clear architectures, reliable implementations, and well-documented platforms that continue to evolve with the organization.
-  </p>
-  <p>
-    Over time, I am building a track record of community contribution and real-world impact toward my long-term goal of becoming a <strong>Salesforce MVP</strong>.
-  </p>
+    <!-- UC EXPERIENCE -->
+    <section class="section" id="uc-experience">
+      <h2>UC Experience</h2>
+      <p>
+        At the University of California, I work as a Salesforce Solution Architect / Lead, helping teams use Salesforce and related platforms to support planning, operations, and resilience across a large, distributed environment.
+      </p>
+      <p>
+        My work touches areas like business continuity, IT disaster recovery, and emergency management, with a focus on:
+      </p>
+      <ul>
+        <li>Designing models and workflows that make continuity and ITDR information usable in day-to-day work</li>
+        <li>Aligning Salesforce solutions with how campus and systemwide teams actually plan, respond, and report</li>
+        <li>Making sure changes are governed, tested, and understood by the people who rely on the platform</li>
+      </ul>
+    </section>
 
-  <hr />
+    <!-- ARTICLES (placeholder for future content) -->
+    <section class="section" id="articles">
+      <h2>Articles</h2>
+      <p>
+        This space is for articles I plan to publish on topics like architecture patterns, AI-assisted processes, and lessons learned from complex Salesforce implementations.
+      </p>
+      <p>
+        As I write and publish more, I’ll add links to individual articles here.
+      </p>
+    </section>
 
-  <h2>What I Bring as a Salesforce Solution Architect</h2>
+    <!-- SALESFORCE KNOWLEDGE (placeholder for future content) -->
+    <section class="section" id="sf-knowledge">
+      <h2>Salesforce Knowledge</h2>
+      <p>
+        I intend to use this section to share Salesforce-focused content: practical notes on Flows, Apex, LWC, security models, environment strategy, and ways to bring Agentforce AI into real business processes.
+      </p>
+      <p>
+        Over time, this page can become a small knowledge base that reflects what I’m learning and applying in real projects.
+      </p>
+    </section>
 
-  <h3>End-to-End Architecture</h3>
-  <p>
-    Design of multi-cloud solutions across Sales, Service, Experience, Marketing, and CPQ, with clear data models, integration patterns, and reference architectures.
-  </p>
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:miryalaca@gmail.com">miryalaca@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mmiryala415/" target="_blank" rel="noopener">linkedin.com/in/mmiryala415</a></p>
+      <p><strong>Location:</strong> San Ramon, California</p>
+    </section>
 
-  <h3>Low-Code First, Code When Needed</h3>
-  <p>
-    Flow-led automation with guardrails for when Apex and LWC are appropriate, and a focus on reducing technical debt through reusable components and patterns.
-  </p>
+    <footer>
+      &copy; <span id="year"></span> Mallesh Miryala
+    </footer>
+  </main>
 
-  <h3>AI, Analytics &amp; Intelligence</h3>
-  <p>
-    Use of Einstein and Agentforce to surface insights, drive smarter actions, and build dashboards and analytics that track readiness, performance, and adoption.
-  </p>
-
-  <h3>Integrations &amp; AppExchange</h3>
-  <p>
-    Connecting Salesforce with enterprise systems and external apps, and selecting/managing AppExchange solutions with governance and support in mind.
-  </p>
-
-  <h3>Security, Org Strategy &amp; Governance</h3>
-  <p>
-    Role and permission designs that align with real-world access needs, plus standards for environments, branching, releases, and change control.
-  </p>
-
-  <h3>Adoption &amp; Enablement</h3>
-  <p>
-    Clear diagrams, documentation, and training that help teams understand, trust, and use the platform—backed by feedback loops that refine features based on real usage.
-  </p>
-
-  <hr />
-
-  <h2>UC Ready, Business Continuity &amp; ITDR</h2>
-  <p>
-    A major part of my work is at the intersection of <strong>Business Continuity, IT Disaster Recovery, and Emergency Management</strong> for large public institutions. I help design and evolve the <strong>UC Ready</strong> platform and related processes so universities can understand their critical services, dependencies, and recovery strategies.
-  </p>
-  <p>
-    This includes translating continuity and ITDR requirements into practical Salesforce-based workflows and data models, bringing together business, IT, and emergency management teams on a shared platform, and creating readiness metrics and dashboards that support decision-making before, during, and after disruptive events.
-  </p>
-
-  <hr />
-
-  <h2>Salesforce Community &amp; MVP Journey</h2>
-  <p>
-    I’m committed to growing as a <strong>Salesforce community contributor</strong> and building a long-term path toward <strong>Salesforce MVP</strong>. This site will evolve into a home for:
-  </p>
-  <ul>
-    <li>Architecture patterns and decisions from real-world implementations</li>
-    <li>Guides on low-code vs. code, Agentforce/AI usage, and governance</li>
-    <li>Lessons from running programs that span continuity, ITDR, and Salesforce</li>
-  </ul>
-
-  <hr />
-
-  <h2>Articles &amp; Salesforce Knowledge</h2>
-  <p>
-    I plan to publish and link articles here on:
-  </p>
-  <ul>
-    <li>Architecting multi-cloud Salesforce solutions for public-sector and enterprise environments</li>
-    <li>Designing AI-augmented experiences with Agentforce and Einstein</li>
-    <li>Business continuity and ITDR patterns implemented with Salesforce and UC Ready</li>
-    <li>Field-tested tips for Flows, Apex, LWC, security models, and release governance</li>
-  </ul>
-  <p>
-    As I publish more writing, links to individual posts and resources will appear on this page.
-  </p>
-
-  <hr />
-
-  <h2>Contact</h2>
-  <p><strong>Email:</strong> <a href="mailto:miryalaca@gmail.com">miryalaca@gmail.com</a></p>
-  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mmiryala415/" target="_blank">linkedin.com/in/mmiryala415</a></p>
-  <p><strong>Location:</strong> San Ramon, California</p>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
 
