@@ -6,23 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* FULL MULTICOLOR BACKGROUND – NO WHITE CARD */
+    /* SALESFORCE-LIKE BLUE GRADIENT BACKGROUND */
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #ff416c, #ff9a00, #22c55e, #0ea5e9, #6366f1);
-      background-size: 260% 260%;
-      animation: bgShift 16s ease infinite;
+      background: radial-gradient(circle at top left, #00a1e0 0%, #0176d3 35%, #0b3173 80%);
+      background-size: 140% 140%;
+      animation: bgShift 18s ease-in-out infinite;
       color: #f9fafb;
     }
 
     @keyframes bgShift {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0%   { background-position: 0% 0%; }
+      50%  { background-position: 100% 60%; }
+      100% { background-position: 0% 0%; }
     }
 
-    /* PAGE CONTAINER */
     .shell {
       max-width: 1150px;
       margin: 0 auto;
@@ -30,42 +29,13 @@
       padding: 1.5rem 1.75rem 3rem;
     }
 
-    /* TOP NAV BAR */
+    /* TOP NAV: ONLY TABS, TOP-RIGHT, BOLD */
     .site-header {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;  /* everything to the right */
       padding: 0.75rem 0;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 10% 10%, #f97316, #ef4444, #3b82f6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #f9fafb;
-    }
-
-    .brand-name {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #e5e7eb;
-    }
-
-    /* TABS – TOP RIGHT, BOLD, MULTI-COLOR */
     nav {
       display: flex;
       gap: 0.9rem;
@@ -73,27 +43,28 @@
 
     nav a {
       text-decoration: none;
-      padding: 0.5rem 1.3rem;
+      padding: 0.5rem 1.4rem;
       border-radius: 999px;
-      font-weight: 800;           /* thick letters */
+      font-weight: 800;           /* bold letters */
       font-size: 0.95rem;
       color: #f9fafb;
-      border: 2px solid rgba(248, 250, 252, 0.9);
+      border: 2px solid rgba(248, 250, 252, 0.95);
       backdrop-filter: blur(6px);
       transition: 0.22s ease;
+      box-shadow: 0 0 0 rgba(15,23,42,0);
     }
 
     nav a.uc-tab {
-      background: #fb7185;        /* pink/red */
+      background: #0b5cab;        /* Salesforce dark blue */
     }
 
     nav a.articles-tab {
-      background: #2563eb;        /* blue */
+      background: #00a1e0;        /* Salesforce cyan */
     }
 
     nav a:hover {
-      transform: scale(1.06) translateY(-1px);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.5);
+      transform: scale(1.07) translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.55);
     }
 
     /* HERO – LOGO LEFT, TEXT RIGHT */
@@ -104,9 +75,9 @@
       margin-top: 2rem;
       padding: 2.5rem 2rem;
       border-radius: 1.5rem;
-      background: rgba(15, 23, 42, 0.72);  /* dark glass, not white card */
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(16px);
+      background: rgba(6, 14, 40, 0.78);  /* dark glass panel */
+      box-shadow: 0 20px 50px rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(18px);
     }
 
     .hero-logo {
@@ -124,24 +95,24 @@
       max-width: 680px;
     }
 
-    /* NAME – COLOR 1 */
+    /* NAME – single color */
     .hero-text h1 {
       margin: 0;
       font-size: 2.7rem;
       font-weight: 900;
-      color: #e5f0ff;             /* icy blue */
+      color: #e5f0ff;             /* light ice blue */
       letter-spacing: 0.02em;
     }
 
-    /* TITLE – COLOR 2 */
+    /* TITLE – different color */
     .hero-text h2 {
       margin: 0.4rem 0 1.9rem;
       font-size: 1.35rem;
       font-weight: 600;
-      color: #facc15;             /* amber/yellow */
+      color: #9fe0ff;             /* soft Salesforce cyan */
     }
 
-    /* BODY TEXT – COLOR 3 */
+    /* BODY TEXT – softer white */
     .hero-text p {
       margin: 0 0 1rem;
       font-size: 1.05rem;
@@ -155,18 +126,12 @@
       }
 
       .site-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
-
-      nav {
-        align-self: flex-start;
+        justify-content: center;
       }
 
       .hero {
         flex-direction: column;
-        padding: 1.8rem 1.4rem 2.1rem;
+        padding: 1.9rem 1.4rem 2.1rem;
       }
 
       .hero-logo img {
@@ -183,12 +148,8 @@
 <body>
   <div class="shell">
 
-    <!-- TOP NAV BAR -->
+    <!-- TOP NAV: TABS ONLY, RIGHT -->
     <header class="site-header">
-      <div class="brand">
-        <div class="brand-mark">MM</div>
-        <div class="brand-name">Mallesh Miryala</div>
-      </div>
       <nav>
         <a class="uc-tab" href="uc.html">UC Ready Experience</a>
         <a class="articles-tab" href="articles.html">Articles</a>
@@ -198,7 +159,7 @@
     <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero-logo">
-        <!-- change MM.jpg to your actual logo file name -->
+        <!-- change MM.jpg to your actual logo filename if needed -->
         <img src="MM.jpg" alt="MM logo" />
       </div>
 
@@ -218,6 +179,8 @@
 
   </div>
 </body>
+</html>
+
 </html>
 
 
