@@ -4,172 +4,153 @@
   <meta charset="UTF-8" />
   <title>Mallesh Miryala | Salesforce Solution Architect & Lead</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
-    /* Page background & layout */
+    /* MULTICOLOR BACKGROUND */
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, sans-serif;
       line-height: 1.6;
-      background: linear-gradient(130deg, #ef4444, #f59e0b, #3b82f6);
-      background-attachment: fixed;
-      color: #111827;
+      background: linear-gradient(135deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #6366f1);
+      background-size: 260% 260%;
+      animation: gradientMove 12s ease infinite;
+      color: #0f172a;
     }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* CARD CONTENT */
     .page {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 1.75rem 1.5rem 3rem;
-      background: #ffffff;
       min-height: 100vh;
-      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.25);
-    }
-
-    /* Header with MM logo on the left */
-    header {
+      padding: 2.5rem 1.5rem 3rem;
       display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 1.25rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
+      padding: 2rem 2.25rem 2.5rem;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    /* TABS */
+    .top-tabs {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .top-tabs a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      border: 1px solid #d1d5db;
+    }
+
+    .top-tabs a:hover {
+      background: #f1f5f9;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      gap: 2rem;
       align-items: center;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
       border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 1rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    .mm-logo {
-      flex-shrink: 0;
-    }
-
-    .mm-logo svg {
+    .hero-logo img {
       display: block;
-      width: 90px;   /* make logo big */
-      height: 70px;
+      max-width: 220px;
+      height: auto;
     }
 
-    .name-block h1 {
+    .hero-text h1 {
       margin: 0 0 0.25rem;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
     }
-    .name-block p {
+
+    .hero-text p {
       margin: 0;
-      font-size: 1rem;
-      color: #4b5563;
-    }
-
-    /* Sections */
-    .section {
-      margin-top: 2rem;
-    }
-    .section h2 {
-      margin: 0 0 0.6rem;
-      font-size: 1.35rem;
-    }
-    .section h3 {
-      margin: 1rem 0 0.3rem;
       font-size: 1.05rem;
-    }
-    .section ul {
-      margin: 0.2rem 0 0.6rem 1.25rem;
-      padding: 0;
-    }
-    .section li + li {
-      margin-top: 0.2rem;
+      color: #475569;
     }
 
-    @media (max-width: 640px) {
-      .page {
-        padding: 1.25rem 1rem 2.5rem;
-        box-shadow: none;
-        border-radius: 0;
-      }
-      header {
+    .about-text p {
+      margin: 0 0 1rem;
+      color: #111827;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .hero-logo img {
+        max-width: 180px;
+      }
+
+      .top-tabs {
+        position: static;
+        margin-bottom: 1rem;
       }
     }
   </style>
 </head>
+
 <body>
   <main class="page">
+    <div class="card">
 
-    <!-- HEADER: MM logo + name/title -->
-    <header>
-      <div class="mm-logo">
-        <!-- Dual-color MM logo (inline SVG, inspired by your image) -->
-        <svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="mmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ef4444" />   <!-- red -->
-              <stop offset="50%" stop-color="#f59e0b" />  <!-- yellow/orange -->
-              <stop offset="100%" stop-color="#3b82f6" /><!-- blue -->
-            </linearGradient>
-          </defs>
-          <!-- stylized double M -->
-          <path d="M10 80 L30 10 L60 55 L90 10 L110 80 L90 80 L60 35 L30 80 Z"
-                fill="url(#mmGradient)" />
-        </svg>
+      <!-- TABS -->
+      <div class="top-tabs">
+        <a href="uc.html">UC Ready Experience</a>
+        <a href="articles.html">Articles</a>
       </div>
 
-      <div class="name-block">
-        <h1>Mallesh Miryala</h1>
-        <p>Salesforce Solution Architect / Technical Lead</p>
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-logo">
+          <img src="MM.jpg" alt="MM logo" />
+        </div>
+
+        <div class="hero-text">
+          <h1>Mallesh Miryala</h1>
+          <p>Salesforce Solution Architect / Technical Lead</p>
+        </div>
       </div>
-    </header>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <h2>About</h2>
-      <p>
-        A Salesforce Solution Architect and Technical Lead with over a decade of experience in software development and on the Salesforce platform, owning the full delivery lifecycle—from requirements and solution design through configuration, custom development, testing, deployment, and long-term support. I work across multiple Salesforce clouds (Sales, Service, Experience, Marketing, CPQ, and analytics), combining low-code automation with Apex, Lightning, integrations, and Agentforce AI to build scalable, secure, and human-centered solutions.
-      </p>
-      <p>
-        I have a strong focus on Agentforce AI–driven experiences—using predictive insights, recommendations, and intelligent automation to simplify work for users and improve decision-making. I’m comfortable leading cross-functional teams, partnering with business stakeholders, BAs, and engineers to turn complex requirements into clear architectures, reliable implementations, and well-documented platforms that continue to evolve with the organization.
-      </p>
-    </section>
+      <!-- MAIN TEXT -->
+      <div class="about-text">
+        <p>
+          A Salesforce Solution Architect and Technical Lead with over a decade of experience in software development and on the Salesforce platform, owning the full delivery lifecycle—from requirements and solution design through configuration, custom development, testing, deployment, and long-term support. I work across multiple Salesforce clouds (Sales, Service, Experience, Marketing, CPQ, and analytics), combining low-code automation with Apex, Lightning, integrations, and Agentforce AI to build scalable, secure, and human-centered solutions.
+        </p>
+        <p>
+          I have a strong focus on Agentforce AI–driven experiences—using predictive insights, recommendations, and intelligent automation to simplify work for users and improve decision-making. I’m comfortable leading cross-functional teams, partnering with business stakeholders, BAs, and engineers to turn complex requirements into clear architectures, reliable implementations, and well-documented platforms that continue to evolve with the organization.
+        </p>
+      </div>
 
-    <!-- WHAT I BRING -->
-    <section class="section" id="what-i-bring">
-      <h2>What I Bring as a Salesforce Solution Architect</h2>
-
-      <h3>End-to-End Architecture</h3>
-      <ul>
-        <li>Design of multi-cloud solutions across Sales, Service, Experience, Marketing, and CPQ</li>
-        <li>Definition of data models, integration patterns, and reference architectures</li>
-      </ul>
-
-      <h3>Low-Code First, Code When Needed</h3>
-      <ul>
-        <li>Flow-led automation and guardrails for when to use Apex/LWC</li>
-        <li>Reduction of technical debt through reusable components and patterns</li>
-      </ul>
-
-      <h3>AI, Analytics &amp; Intelligence</h3>
-      <ul>
-        <li>Use of Einstein/Agentforce to surface insights and drive smarter actions</li>
-        <li>Dashboards and analytics that track readiness, performance, and adoption</li>
-      </ul>
-
-      <h3>Integrations &amp; AppExchange</h3>
-      <ul>
-        <li>Connecting Salesforce with enterprise systems and external apps</li>
-        <li>Selecting and managing AppExchange solutions with governance and support in mind</li>
-      </ul>
-
-      <h3>Security, Org Strategy &amp; Governance</h3>
-      <ul>
-        <li>Role/permission designs aligned to real-world access needs</li>
-        <li>Standards for environments, branching, releases, and change control</li>
-      </ul>
-
-      <h3>Adoption &amp; Enablement</h3>
-      <ul>
-        <li>Clear diagrams, documentation, and training that help teams understand, trust, and use the platform</li>
-        <li>Feedback loops to continuously refine features based on real usage</li>
-      </ul>
-    </section>
-
+    </div>
   </main>
 </body>
 </html>
-
-
-
-
