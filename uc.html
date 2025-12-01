@@ -2,51 +2,211 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>UC Ready Experience | Mallesh Miryala</title>
+  <title>Implementation Portfolio | Mallesh Miryala</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     body {
       margin: 0;
-      font-family: system-ui, sans-serif;
-      background: linear-gradient(135deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #6366f1);
-      background-size: 260% 260%;
-      animation: gradientMove 12s ease infinite;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #0176d3; /* Salesforce blue */
+      color: #f9fafb;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header .title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    header a {
+      color: #e5f0ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 1.5rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.25rem;
       color: #0f172a;
-      padding: 2rem;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .subtitle {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      color: #4b5563;
+      font-size: 0.98rem;
     }
 
-    .content {
-      background: rgba(255, 255, 255, 0.94);
-      padding: 2rem;
-      border-radius: 1rem;
-      max-width: 900px;
-      margin: auto;
-      box-shadow: 0 18px 45px rgba(15,23,42,0.35);
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.4rem;
+      color: #0176d3;
     }
 
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.1rem;
+      margin-bottom: 0.35rem;
+      color: #111827;
+    }
+
+    p {
+      margin: 0 0 0.7rem;
+    }
+
+    ul {
+      margin: 0.2rem 0 0.8rem 1.25rem;
+      padding: 0;
+    }
+
+    li + li {
+      margin-top: 0.15rem;
+    }
+
+    .pill-heading {
+      display: inline-block;
+      padding: 0.18rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #e0f2fe;
+      color: #0369a1;
+      margin-bottom: 0.35rem;
+    }
+
+    .meta {
+      font-size: 0.92rem;
+      color: #6b7280;
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 0 1rem;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <div class="content">
 
+  <header>
+    <div class="title">Implementation Portfolio</div>
     <a href="index.html">← Back to Home</a>
+  </header>
 
-    <h1>UC Ready Experience</h1>
-    <p>
-      Add your UC Ready, Business Continuity, ITDR experience, diagrams, architecture,
-      and responsibilities here. This page can grow anytime you want.
+  <main>
+    <h1>Implementation Portfolio</h1>
+    <p class="subtitle">
+      A selection of Salesforce implementations I’ve led or contributed to as a Solution Architect / Lead, focused on
+      multi-cloud design, automation, governance, and enterprise-scale delivery.
     </p>
 
-  </div>
+    <!-- PUBLIC UNIVERSITY SYSTEM -->
+    <span class="pill-heading">Enterprise Platform</span>
+    <h2>Public University System – Enterprise Continuity & Operations Platform</h2>
+    <p class="meta">
+      Role: Sr Salesforce Lead / Administrator &nbsp;|&nbsp; Location: California &nbsp;|&nbsp; Timeline: 2024 – Present
+    </p>
+    <h3>Scope</h3>
+    <ul>
+      <li>Led Salesforce platform work for a large public university system, supporting continuity planning, IT disaster recovery, and operational readiness across multiple campuses.</li>
+      <li>Owned end-to-end configuration of core objects, page layouts, record types, validation rules, and automation for thousands of distributed users.</li>
+      <li>Worked closely with emergency management, business continuity, and IT stakeholders to align the platform with real-world processes.</li>
+    </ul>
+
+    <h3>Key Contributions</h3>
+    <ul>
+      <li>Designed and maintained complex workflow rules, approval processes, and record-triggered Flows to reduce manual effort and improve data quality.</li>
+      <li>Managed user access at scale: profiles, permission sets, roles, and sharing models that respect campus, department, and role-based boundaries.</li>
+      <li>Supported a vendor-based continuity platform (UC Ready / Fusion Risk Management) by defining requirements, testing enhancements, and coordinating releases with campus leaders.</li>
+      <li>Maintained administrator documentation and runbooks, ensuring changes are well-governed and repeatable across the system.</li>
+    </ul>
+
+    <!-- SAN MATEO COUNTY -->
+    <span class="pill-heading">Public Sector</span>
+    <h2>San Mateo County – Salesforce Platform for Public Services</h2>
+    <p class="meta">
+      Role: Sr Salesforce Lead (Sales &amp; Service Cloud) &nbsp;|&nbsp; Location: Redwood City, California &nbsp;|&nbsp; Timeline: 2022 – 2024
+    </p>
+    <h3>Scope</h3>
+    <ul>
+      <li>Led Salesforce Sales &amp; Service Cloud implementation for county departments, supporting case management, service requests, and internal workflows.</li>
+      <li>Configured standard and custom objects, junction objects, record types, page layouts, and security to match department-specific business processes.</li>
+      <li>Implemented Conga-based document and email generation to streamline outbound communication and approvals.</li>
+    </ul>
+
+    <h3>Key Contributions</h3>
+    <ul>
+      <li>Designed object models, field structures, and automation patterns to support multi-department processes while maintaining strong data separation.</li>
+      <li>Built and maintained Conga templates, custom buttons, and automation to generate outbound documents directly from Salesforce records.</li>
+      <li>Led requirements gathering, LOE estimation, solution proposals, implementation, and end-user training for new features and enhancements.</li>
+      <li>Implemented automation using Workflow Rules and Flow Builder for email alerts, field updates, and task creation, improving response consistency.</li>
+    </ul>
+
+    <!-- T-MOBILE CPQ -->
+    <span class="pill-heading">CPQ &amp; Lead-to-Cash</span>
+    <h2>T-Mobile – CPQ Lead-to-Cash Transformation</h2>
+    <p class="meta">
+      Role: Sr Salesforce Developer / Admin (Sales, Service &amp; CPQ) &nbsp;|&nbsp; Locations: Dallas, TX &amp; Seattle, WA (Remote) &nbsp;|&nbsp; Timeline: 2020 – 2022
+    </p>
+    <h3>Scope</h3>
+    <ul>
+      <li>Supported and enhanced a complex quote-to-cash stack spanning Eloqua, Salesforce, SteelBrick CPQ, Zuora, and NetSuite.</li>
+      <li>Worked across Opportunities, Products, Quotes, Orders, and Contracts to handle enterprise-grade lead-to-cash processes.</li>
+      <li>Focused on advanced pricing, discounting, approvals, and automation to support large, configurable deals.</li>
+    </ul>
+
+    <h3>Key Contributions</h3>
+    <ul>
+      <li>Configured and extended SteelBrick CPQ: product bundles, product rules, price rules, discounting strategies, and approval rules aligned with business policy.</li>
+      <li>Implemented bundles with complex option-level pricing, markup, and discount logic to meet specific business requirements.</li>
+      <li>Integrated CPQ outputs with a subscription billing system (Zuora) and downstream ERP (NetSuite) as part of an end-to-end lead-to-cash solution.</li>
+      <li>Created custom quote templates and integrated DocuSign for e-signature workflows, reducing cycle time to close.</li>
+    </ul>
+
+    <!-- ADDITIONAL EXPERIENCE -->
+    <span class="pill-heading">Additional Work</span>
+    <h2>Additional Enterprise &amp; Consulting Experience</h2>
+    <p>
+      Beyond the highlighted implementations above, I’ve worked across multiple orgs and projects as a Salesforce Lead / Administrator / Developer.
+      Common themes across these engagements include:
+    </p>
+    <ul>
+      <li>Designing scalable data models, security models, and automation patterns for large user bases.</li>
+      <li>Using Flows first, with Apex and integrations where needed for performance or complex logic.</li>
+      <li>Managing CI/CD pipelines with tools like Copado, Git, and VS Code for structured, repeatable releases.</li>
+      <li>Partnering closely with business stakeholders, BAs, and technical teams to turn requirements into stable, maintainable Salesforce solutions.</li>
+    </ul>
+
+    <p class="subtitle">
+      This portfolio will continue to evolve as I add more detail on architecture decisions, diagrams, reference patterns,
+      and lessons learned from complex implementations.
+    </p>
+
+  </main>
 </body>
 </html>
+
